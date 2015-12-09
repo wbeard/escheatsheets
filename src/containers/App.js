@@ -40,10 +40,10 @@ function selectFeatures(features, categoryFilters, filterText) {
     }
 
     return feature.get('title').toLowerCase().includes(filterText);
-  });
+  }).sortBy(feature => feature.get('title'));
 }
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     features: selectFeatures(state.get('features'), state.get('categoryFilters'), state.get('filterText')),
     categoryFilters: state.get('categoryFilters'),
