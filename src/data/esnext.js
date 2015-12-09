@@ -18,5 +18,13 @@ export const features = [
           ...\
       }'
     ]
+  },
+  {
+    title: 'Exponentiation Operator',
+    dockLink: 'https://github.com/rwaldron/exponentiation-operator',
+    tag: 3,
+    examples: [
+      'let cubed = 2 ** 3;'
+    ]
   }
 ];
