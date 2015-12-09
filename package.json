@@ -1,0 +1,39 @@
+{
+  "name": "escheatsheet",
+  "version": "1.0.0",
+  "description": "A cheatsheet for ECMAscript features",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run build:webpack",
+    "start": "node devServer.js",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./src/test/test_helper.js --recursive ./src",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.3.15",
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "chai": "^3.4.1",
+    "chai-immutable": "^1.5.3",
+    "expect.js": "^0.3.1",
+    "express": "^4.13.3",
+    "mocha": "^2.3.4",
+    "react-addons-test-utils": "^0.14.3",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0"
+  },
+  "dependencies": {
+    "immutable": "^3.7.5",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4"
+  }
+}
