@@ -27,6 +27,10 @@ For example:
   
   Feel free to branch and file a PR with your addition.
   
+### Waffle Board
+
+We're using waffle to organize issues into tasks to help improve the codebase. Check it out here: https://waffle.io/wbeard/escheatsheets.
+
 ### Other
   
   Clone the repo & file a PR with your changes. They'll be reviewed and merged as soon as possible.
