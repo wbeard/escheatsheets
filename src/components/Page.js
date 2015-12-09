@@ -30,10 +30,6 @@ const categories = fromJS([
   {
     text: 'ES2015',
     value: 2015
-  },
-  {
-    text: 'ES2016',
-    value: 2016
   }
 ]);
 
