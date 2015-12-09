@@ -27,7 +27,7 @@ For example:
   
   Feel free to branch and file a PR with your addition.
   
-  ### Other
+### Other
   
   Clone the repo & file a PR with your changes. They'll be reviewed and merged as soon as possible.
   
