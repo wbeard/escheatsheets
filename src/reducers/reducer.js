@@ -2,7 +2,7 @@ import Immutable, { fromJS } from 'immutable';
 
 import { Filters } from '../actions/actions';
 
-import { features } from '../data/esnext';
+import { features } from '../data';
 
 const initialState = fromJS({
   categoryFilters: [],
