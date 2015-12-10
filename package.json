@@ -8,7 +8,7 @@
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
-    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./src/test/test_helper.js --recursive ./src",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./src/test/test_helper.js --recursive './src/**/test/**/*.js'",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
@@ -23,8 +23,10 @@
     "chai-immutable": "^1.5.3",
     "expect.js": "^0.3.1",
     "express": "^4.13.3",
+    "jsdom": "^7.2.0",
     "mocha": "^2.3.4",
     "react-addons-test-utils": "^0.14.3",
+    "sinon": "^1.17.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
   },

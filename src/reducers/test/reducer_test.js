@@ -22,7 +22,9 @@ describe('reducer', () => {
     });
 
     it('has the correct default state', () => {
-      expect(state).to.equal(mockInitialState);
+      expect(state.get('categoryFilters')).not.to.be.undefined;
+      expect(state.get('filterText')).not.to.be.undefined;
+      expect(state.get('features')).not.to.be.undefined;
     });
   });
 
