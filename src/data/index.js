@@ -81,6 +81,39 @@ function() {
 }
 `
     ]
+  },
+  {
+    title: 'Descructuring',
+    tag: 2015,
+    docLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment',
+    examples: [
+`//Arrays
+
+//ES5
+var arr = [1, 2, 3];
+var first = arr[0];
+var second = arr[1];
+var third = arr[2];
+
+//ES2015
+const arr = [1, 2, 3];
+const [first, second, third] = arr;
+
+//Objects
+
+//ES5
+var obj = {a: 1, b: 2}
+var a = obj.a;
+var b = obj.b;
+
+//ES2015
+const obj = {a: 1, b:2}
+const { a, b } = obj;
+
+//or if you'd like to name them
+const { a: foo, b: bar } = obj;
+`
+    ]
   }
 ];
 
