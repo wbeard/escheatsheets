@@ -83,7 +83,7 @@ function() {
     ]
   },
   {
-    title: 'Descructuring',
+    title: 'Destructuring',
     tag: 2015,
     docLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment',
     examples: [
