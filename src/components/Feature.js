@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { Component, PropTypes } from 'react';
+import { PrismCode } from "react-prism";
 
 export default class Feature extends Component {
   static propTypes = {
@@ -40,7 +41,9 @@ export default class Feature extends Component {
           {
             this.props.examples.map(example =>
               <pre key={ _.uniqueId() }>
-                { example }
+                <PrismCode key={ _.uniqueId() } className="language-javascript">
+                  { example }
+                </PrismCode>
               </pre>
             )
           }
