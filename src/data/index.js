@@ -16,9 +16,17 @@ export const features = [
     docLink: 'https://github.com/tc39/Array.prototype.includes/',
     tag: 4,
     examples: [
-      'if (arr.includes(el)) {\
-          ...\
-      }'
+`// ES5
+var text = "Foo";
+if (arr.indexOf(text) > -1) {
+  //do stuff
+}
+
+// Proposal
+if (arr.includes(text)) {
+  //do stuff
+}
+`
     ]
   },
   {
@@ -27,6 +35,51 @@ export const features = [
     tag: 3,
     examples: [
       'let cubed = 2 ** 3;'
+    ]
+  },
+  {
+    title: 'Class Fields & Static Properties',
+    docLink: 'https://github.com/jeffmo/es-class-fields-and-static-properties',
+    tag: 1,
+    examples: [
+`//Instance properties
+
+//ES2015
+class MyClass {
+  constructor() {
+    this.myProp = 42;
+    console.log(this.myProp);
+  }
+}
+
+//Proposal
+class MyClass {
+  myProp = 42;
+
+  constructor() {
+    console.log(this.myProp);
+  }
+}
+`
+    ]
+  },
+  {
+    title: 'Arrow Functions',
+    tag: 2015,
+    docLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
+    examples: [
+`//ES5
+function() {
+  return 42;
+}.bind(this);
+
+//ES2015
+() => 42;
+//or
+() => {
+  return 42;
+}
+`
     ]
   }
 ];

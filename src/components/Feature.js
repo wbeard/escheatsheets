@@ -24,6 +24,7 @@ export default class Feature extends Component {
     const subHeadStyles = {
       color: '#95a5a6',
       fontSize: '1.75rem',
+      marginBottom: '2rem',
       marginTop: '0'
     };
 
