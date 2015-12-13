@@ -7,8 +7,16 @@ export default class TextSearch extends Component {
   }
 
   render() {
+    const inputProps = {
+      autoFocus: true,
+      className: 'input-lg form-control',
+      onChange: this._onChange.bind(this),
+      placeholder: 'Filter by name',
+      type: 'text',
+      value: this.props.value
+    }
     return (
-      <input placeholder="Filter by name" className="input-lg form-control" value={ this.props.value } type="text" onChange={ this._onChange.bind(this) } />
+      <input { ...inputProps } />
     );
   }
 
