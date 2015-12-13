@@ -16,16 +16,15 @@ export const features = [
     docLink: 'https://github.com/tc39/Array.prototype.includes/',
     tag: 4,
     examples: [
-`// ES5
-var text = "Foo";
-if (arr.indexOf(text) > -1) {
-  //do stuff
+`// Check if an element is in the array.
+const arr = [1, 2, 3];
+const elem = 1;
+
+if (arr.includes(elem)) {
+  console.log('Array includes this element');
 }
 
-// Proposal
-if (arr.includes(text)) {
-  //do stuff
-}
+// -> 'Array includes this element';
 `
     ]
   },
@@ -34,7 +33,16 @@ if (arr.includes(text)) {
     docLink: 'https://github.com/rwaldron/exponentiation-operator',
     tag: 3,
     examples: [
-      'let cubed = 2 ** 3;'
+`//Squared
+let squared = 2 ** 2;
+console.log(squared);
+// -> 4
+
+//Cubed
+let cubed = 2 ** 3;
+console.log(cubed);
+// -> 8
+`
     ]
   },
   {
@@ -43,23 +51,21 @@ if (arr.includes(text)) {
     tag: 1,
     examples: [
 `//Instance properties
-
-//ES2015
-class MyClass {
-  constructor() {
-    this.myProp = 42;
-    console.log(this.myProp);
-  }
-}
-
-//Proposal
 class MyClass {
   myProp = 42;
-
-  constructor() {
-    console.log(this.myProp);
-  }
 }
+
+const myClass = new MyClass();
+console.log(myClass.myProp);
+// -> 42
+`,
+`//Static properties
+class MyClass {
+  static myProp = 42;
+}
+
+console.log(MyClass.myProp);
+// -> 42
 `
     ]
   },
@@ -68,17 +74,19 @@ class MyClass {
     tag: 2015,
     docLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
     examples: [
-`//ES5
-function() {
-  return 42;
-}.bind(this);
+`//Implicit return
+const meaningOfEverything = () => 42;
 
-//ES2015
-() => 42;
-//or
-() => {
+console.log(meaningOfEverything());
+// -> 42
+`,
+`// Explicit return
+const meaningOfEverything = () => {
   return 42;
 }
+
+console.log(meaningOfEverything());
+// -> 42
 `
     ]
   },
@@ -88,30 +96,44 @@ function() {
     docLink: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment',
     examples: [
 `//Arrays
-
-//ES5
-var arr = [1, 2, 3];
-var first = arr[0];
-var second = arr[1];
-var third = arr[2];
-
-//ES2015
 const arr = [1, 2, 3];
 const [first, second, third] = arr;
+console.log(first, second, third);
+// -> 1, 2, 3
 
 //Objects
-
-//ES5
-var obj = {a: 1, b: 2}
-var a = obj.a;
-var b = obj.b;
-
-//ES2015
 const obj = {a: 1, b:2}
 const { a, b } = obj;
+console.log(a, b);
+// -> 1, 2
 
-//or if you'd like to name them
+//Named deconstructed variables
 const { a: foo, b: bar } = obj;
+console.log(foo, bar);
+// -> 1, 2
+`
+    ]
+  },
+  {
+    title: 'Async Functions & Await',
+    tag: 3,
+    docLink: 'https://github.com/tc39/ecmascript-asyncawait',
+    examples: [
+`
+async function getCollaboratorImages(full_name) {
+  var url = 'https://api.github.com/repos/' + full_name + '/collaborators';
+  var res = await request({url: url, headers: headers});
+
+  return JSON.parse(res.body).map(function(collab) {
+      return collab.avatar_url;
+  });
+}
+
+const images = await getCollaboratorImages('wbeard/escheatsheets');
+
+console.log(images.length);
+
+// -> 1
 `
     ]
   }
